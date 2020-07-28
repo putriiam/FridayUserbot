@@ -21,10 +21,10 @@ Lastupdate = time.time()
 os.system("pip install --upgrade pip")
 if Var.STRING_SESSION:
     session_name = str(Var.STRING_SESSION)
-    bot = TelegramClient(StringSession(session_name), Var.APP_ID, Var.API_HASH)
+    bot = TelegramClient(StringSession(session_name), Var.856596, Var.278f476159628ba7565fc76d9bce5ed8)
 else:
     session_name = "startup"
-    bot = TelegramClient(session_name, Var.APP_ID, Var.API_HASH)
+    bot = TelegramClient(session_name, Var.856596, Var.278f476159628ba7565fc76d9bce5ed8)
 
 
 CMD_LIST = {}
@@ -61,7 +61,7 @@ if bool(ENV):
     # Check if the config was edited by using the already used variable.
     # Basically, its the 'virginity check' for the config file ;)
     CONFIG_CHECK = os.environ.get(
-        "___________PLOX_______REMOVE_____THIS_____LINE__________", None)
+        "", None)
 
     if CONFIG_CHECK:
         LOGS.info(
@@ -70,7 +70,7 @@ if bool(ENV):
         quit(1)
 
     # Logging channel/group configuration.
-    BOTLOG_CHATID = os.environ.get("BOTLOG_CHATID", None)
+    BOTLOG_CHATID = os.environ.get("BOTLOG_CHATID","True")
     try:
         BOTLOG_CHATID = int(BOTLOG_CHATID)
     except:
